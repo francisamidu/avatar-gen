@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="md:w-7/12">
         <h1 className="px-4 text-4xl font-bold capitalize text-white md:px-0 md:text-6xl md:leading-[4rem]">
           Easily generate Avatar using our
-          <span className="mx-1.5 border-b border-blue-500 text-blue-500">
+          <span className="mx-1.5 border-b border-green-700 text-green-700">
             {shared.name}
           </span>{' '}
           AI

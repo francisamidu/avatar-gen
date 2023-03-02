@@ -16,7 +16,7 @@ const Nav = () => {
         <a
           href="https://www.github.com/francisamidu/avatar-gen"
           target="_blank"
-          className="inline-flex items-center rounded-3xl border-none bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-inherit shadow-md outline-none hover:bg-blue-500"
+          className="inline-flex items-center rounded-3xl border-none bg-green-700 px-5 py-2.5 text-center text-sm font-medium text-inherit shadow-md outline-none hover:bg-green-500"
         >
           <Github color="#fff" size={20} />
           <span className="ml-2 text-white">Star on Github</span>
