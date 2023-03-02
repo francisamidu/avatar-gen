@@ -1,7 +1,12 @@
 import React from 'react';
-import { Home } from './components';
+import { Home, Nav } from './components';
 const App = () => {
-  return <Home />;
+  return (
+    <>
+      <Nav />
+      <Home />
+    </>
+  );
 };
 
 export default App;
