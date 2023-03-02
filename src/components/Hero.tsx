@@ -1,11 +1,10 @@
 import React from 'react';
 import Button from './Button';
-import { ArrowRight } from 'lucide-react';
 import shared from '../shared.json';
 
 const Hero = () => {
   return (
-    <section className="my-24 flex flex-1 flex-col items-center justify-center text-center">
+    <section className="my-36 flex flex-1 flex-col items-center justify-center text-center">
       <div className="md:w-7/12">
         <h1 className="px-4 text-4xl font-bold capitalize text-white md:px-0 md:text-6xl md:leading-[4rem]">
           Easily generate Avatar using our
