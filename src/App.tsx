@@ -1,10 +1,10 @@
 import React from 'react';
-import { Home, Nav } from './components';
+import { Hero, Nav } from './components';
 const App = () => {
   return (
     <main className="">
       <Nav />
-      <Home />
+      <Hero />
     </main>
   );
 };
