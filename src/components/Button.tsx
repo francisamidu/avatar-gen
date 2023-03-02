@@ -10,7 +10,7 @@ const MainButton = ({
 }: ButtonProps) => {
   let position = iconPosition ? iconPosition : 'right';
   const style =
-    'text-white bg-redish-700 hover:bg-redish-500 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center outline-none';
+    'text-white bg-blue-600 hover:bg-blue-500 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center outline-none';
   const styles = classNames ? `${style} ${classNames}` : style;
   const handleClick = () => {
     if (onClick) {
