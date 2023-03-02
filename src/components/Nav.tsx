@@ -7,7 +7,10 @@ const Nav = () => {
   return (
     <motion.nav>
       <div className="border-b-200 mx-auto flex flex-row flex-wrap items-center justify-between border-b py-3 md:max-w-[1100px]">
-        <a href="/" className="self-center whitespace-nowrap text-xl font-bold">
+        <a
+          href="/"
+          className="self-center whitespace-nowrap text-xl font-bold text-white"
+        >
           {shared.name}
         </a>
         <a
