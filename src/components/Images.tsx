@@ -7,7 +7,7 @@ import powered from '../assets/images/powered-by-vitawind-bright.png';
 const Images = () => {
   const [images, setImages] = useState([logo, powered]);
   return (
-    <motion.section>
+    <motion.section className="my-5 flex flex-row items-center justify-center">
       {images.map((image) => (
         <motion.div
           key={JSON.stringify(image)}
