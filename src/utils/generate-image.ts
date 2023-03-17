@@ -26,7 +26,7 @@ const generateImage = async (prompt: string) => {
         body: JSON.stringify({
           prompt,
           n: 2,
-          size: '256x256',
+          size: '1024x1024',
         }),
       },
     );

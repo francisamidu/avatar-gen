@@ -7,7 +7,7 @@ import generateImage from '../utils/generate-image';
 
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
-  const generateAvatar = async () => {
+  const generateWallpaper = async () => {
     try {
       if (!prompt) {
         toast.error('Please provide any image prompt');
@@ -15,6 +15,7 @@ const Hero = () => {
       }
       const response = await generateImage(prompt);
       console.log(response.url);
+      setPrompt('');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
       toast.error(message);
@@ -32,15 +33,15 @@ const Hero = () => {
           <span className="ml-2 text-gray-100">Introducing {shared.name}</span>
         </a>
         <h1 className="px-4 text-4xl font-bold capitalize text-white md:px-0 md:text-6xl md:leading-[4rem]">
-          Easily generate Avatar using our
+          Easily generate Wallpapers using our
           <span className="mx-1.5 border-b border-green-700 text-green-700">
             {shared.name}
           </span>{' '}
           AI
         </h1>
         <p className="mx-auto my-8 w-4/5 text-gray-500">
-          Create Fine avatars for your social media profiles with our AI Avatar
-          Generator in <span className="font-bold ">a few seconds</span>
+          Create 3D, Futuristic, 4K wallpapers with our AI Wallpaper Generator
+          in <span className="font-bold ">a few seconds</span>
         </p>
         <form className="mt-10 flex flex-col items-center justify-center">
           <textarea
@@ -54,7 +55,7 @@ const Hero = () => {
           <Button
             classNames="px-7 py-4 !rounded-3xl w-fit mt-5"
             text={`Start Generating`}
-            onClick={generateAvatar}
+            onClick={generateWallpaper}
           />
         </form>
       </div>
