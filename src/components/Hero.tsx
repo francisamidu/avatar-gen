@@ -33,7 +33,7 @@ const Hero = () => {
   };
   const handleDownload = async () => {
     const originalImage = image;
-    const imageUrl = await fetch(originalImage);
+    const imageUrl = await fetch(originalImage, { method: 'GET', headers: {} });
 
     //Split image name
     const nameSplit = originalImage.split('/');
