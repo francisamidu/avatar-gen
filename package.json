@@ -10,8 +10,6 @@
   "dependencies": {
     "@fontsource/inter": "4.5.15",
     "@heroicons/react": "2.0.16",
-    "dotenv": "16.0.3",
-    "file-save": "0.2.0",
     "file-saver": "2.0.5",
     "framer-motion": "9.1.7",
     "lucide-react": "0.119.0",
