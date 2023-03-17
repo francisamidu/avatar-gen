@@ -21,7 +21,6 @@ const Hero = () => {
       setLoading(true);
       const response = await generateImage(prompt);
       setImage(response.url);
-      setPrompt('');
       setButtonText('Start Generation');
       setLoading(false);
     } catch (error) {
@@ -36,7 +35,7 @@ const Hero = () => {
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('target', '_blank');
-    link.setAttribute('download', 'image.jpg'); //or any other extension
+    link.setAttribute('download', `${prompt}.jpg`); //or any other extension
     document.body.appendChild(link);
     link.click();
   };
@@ -111,7 +110,7 @@ const Hero = () => {
             Generated Wallpaper
           </h3>
           <img
-            alt="Original photo of a room with roomGPT.io"
+            alt="Original photo of wallpaper-gen"
             src={image}
             className="h-96 w-full rounded-2xl object-cover"
             width={400}
