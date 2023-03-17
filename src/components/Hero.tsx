@@ -4,9 +4,11 @@ import { TwitterIcon } from 'lucide-react';
 import { toast } from 'react-toastify';
 import shared from '../shared.json';
 import generateImage from '../utils/generate-image';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
+  const [image, setImage] = useState('');
   const generateWallpaper = async () => {
     try {
       if (!prompt) {
@@ -14,7 +16,7 @@ const Hero = () => {
         return;
       }
       const response = await generateImage(prompt);
-      console.log(response.url);
+      setImage(response.url);
       setPrompt('');
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
@@ -58,6 +60,12 @@ const Hero = () => {
             onClick={generateWallpaper}
           />
         </form>
+        <motion.div
+          key={JSON.stringify(image)}
+          className="my-2 max-w-[512px] rounded-md"
+        >
+          <img className="w-full" src={image}></img>
+        </motion.div>
       </div>
     </section>
   );
