@@ -8,8 +8,9 @@ const MainButton = ({
   text,
   onClick,
 }: ButtonProps) => {
-  const style =
-    'text-white bg-green-700 hover:bg-green-800 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center outline-none';
+  const style = `text-white bg-green-700 hover:bg-green-800 font-medium rounded text-sm px-5 py-2.5 text-center inline-flex items-center outline-none ${
+    iconShow ? 'cursor-not-allowed' : ''
+  }`;
   const styles = classNames ? `${style} ${classNames}` : style;
   const handleClick = () => {
     if (onClick) {
@@ -17,7 +18,12 @@ const MainButton = ({
     }
   };
   return (
-    <button type="button" className={styles} onClick={handleClick}>
+    <button
+      type="button"
+      className={styles}
+      onClick={handleClick}
+      disabled={iconShow}
+    >
       <span className="ml-3">{text}</span>
       {iconShow ? icon : null}
     </button>

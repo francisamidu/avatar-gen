@@ -60,30 +60,9 @@ const Hero = () => {
           />
           <Button
             classNames="px-7 py-4 !rounded-3xl w-fit mt-5"
-            text={`Start Generating`}
-            onClick={generateWallpaper}
-          />
-        </form>
-        <div
-          className={`my-5 mx-auto flex max-w-[512px] flex-col items-center justify-center rounded-md ${
-            !image ? 'hidden' : ''
-          }`}
-        >
-          <h3 className="mb-1 text-lg font-medium text-slate-300">
-            Generated Wallpaper
-          </h3>
-          <img
-            alt="Original photo of a room with roomGPT.io"
-            src={image}
-            className="h-96 w-full rounded-2xl object-cover"
-            width={400}
-            height={400}
-          />
-          <Button
-            text="Download"
             icon={
               <svg
-                className="mr-3 -ml-1 h-5 w-5 animate-spin text-white"
+                className="ml-3 h-5 w-5 animate-spin text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -104,7 +83,26 @@ const Hero = () => {
               </svg>
             }
             iconShow={loading}
+            text={`Start Generating`}
+            onClick={generateWallpaper}
           />
+        </form>
+        <div
+          className={`my-5 mx-auto flex max-w-[512px] flex-col items-center justify-center rounded-md ${
+            !image ? 'hidden' : ''
+          }`}
+        >
+          <h3 className="mb-1 text-lg font-medium text-slate-300">
+            Generated Wallpaper
+          </h3>
+          <img
+            alt="Original photo of a room with roomGPT.io"
+            src={image}
+            className="h-96 w-full rounded-2xl object-cover"
+            width={400}
+            height={400}
+          />
+          <Button text="Download" />
         </div>
       </div>
     </section>
