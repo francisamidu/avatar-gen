@@ -60,12 +60,21 @@ const Hero = () => {
             onClick={generateWallpaper}
           />
         </form>
-        <motion.div
-          key={JSON.stringify(image)}
-          className="my-2 max-w-[512px] rounded-md"
+        <div
+          className={`my-5 mx-auto flex max-w-[512px] flex-col items-center justify-center rounded-md ${
+            !image ? 'hidden' : ''
+          }`}
         >
-          <img className="w-full" src={image}></img>
-        </motion.div>
+          <h3 className="mb-1 text-lg font-medium">Generated Wallpaper</h3>
+          <img
+            alt="Original photo of a room with roomGPT.io"
+            src={image}
+            className="h-96 w-full rounded-2xl object-cover"
+            width={400}
+            height={400}
+          />
+          <Button text="Download" />
+        </div>
       </div>
     </section>
   );
