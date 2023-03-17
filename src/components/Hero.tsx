@@ -32,7 +32,25 @@ const Hero = () => {
     }
   };
   const handleDownload = async () => {
-    saveAs(image, 'image.jpg');
+    fetch(image, {
+      method: 'GET',
+      headers: {
+        'Content-Disposition': 'attachment',
+      },
+    })
+      .then((response) => {
+        response.arrayBuffer().then((buffer) => {
+          const url = window.URL.createObjectURL(new Blob([buffer]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'image.jpg'); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
@@ -112,6 +130,7 @@ const Hero = () => {
             height={400}
           />
           <Button
+            classNames="mt-4"
             text="Download"
             onClick={handleDownload}
             icon={<Download size={28} color="#fff" className="ml-3" />}
