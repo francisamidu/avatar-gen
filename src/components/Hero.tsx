@@ -33,15 +33,15 @@ const Hero = () => {
           <span className="ml-2 text-gray-100">Introducing {shared.name}</span>
         </a>
         <h1 className="px-4 text-4xl font-bold capitalize text-white md:px-0 md:text-6xl md:leading-[4rem]">
-          Easily generate Wallpapers using our
+          Revolutionize your wallpaper game with{' '}
           <span className="mx-1.5 border-b border-green-700 text-green-700">
             {shared.name}
           </span>{' '}
-          AI
         </h1>
         <p className="mx-auto my-8 w-4/5 text-gray-500">
-          Create 3D, Futuristic, 4K wallpapers with our AI Wallpaper Generator
-          in <span className="font-bold ">a few seconds</span>
+          Want a wallpaper that's unlike anything else? Let our AI-powered
+          generator create a one-of-a-kind design just for you. Try it out now
+          and see the magic for yourself.
         </p>
         <form className="mt-10 flex flex-col items-center justify-center">
           <textarea
