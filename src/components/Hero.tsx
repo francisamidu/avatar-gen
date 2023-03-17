@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { saveAs } from 'file-saver';
 import Button from './Button';
 import { Download, TwitterIcon } from 'lucide-react';
 import { toast } from 'react-toastify';
 import shared from '../shared.json';
 import generateImage from '../utils/generate-image';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
@@ -32,21 +32,7 @@ const Hero = () => {
     }
   };
   const handleDownload = async () => {
-    const originalImage = image;
-    const imageUrl = await fetch(originalImage, { method: 'GET', headers: {} });
-
-    //Split image name
-    const nameSplit = originalImage.split('/');
-    const duplicateName = nameSplit.pop();
-
-    const imageBlog = await imageUrl.blob();
-    const imageURL = URL.createObjectURL(imageBlog);
-    const link = document.createElement('a');
-    link.href = imageURL;
-    link.download = '' + duplicateName + '';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    saveAs(image, 'image.jpg');
   };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
@@ -77,7 +63,9 @@ const Hero = () => {
             onChange={(e) => setPrompt(e.target.value)}
             rows={4}
             className="mx-auto mt-3 w-3/5 rounded-md border-2 border-slate-700 bg-gray-800 p-2 text-gray-400 shadow-sm focus:outline-none"
-            placeholder={'e.g. Generate a futuristic avatar for'}
+            placeholder={
+              'e.g. Generate a futuristic 4k, nier automata, no blur,sturdy'
+            }
           />
           <Button
             classNames="px-7 py-4 !rounded-3xl w-fit mt-5"
