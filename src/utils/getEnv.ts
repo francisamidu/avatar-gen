@@ -1,3 +1,7 @@
 export const getEnv = () => {
-  return process.env.OPENAI_API_KEY;
+  try {
+    return process.env.OPENAI_API_KEY;
+  } catch (error) {
+    throw new Error('Env not available');
+  }
 };

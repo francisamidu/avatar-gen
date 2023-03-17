@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import { ArrowRight, TwitterIcon } from 'lucide-react';
+import { TwitterIcon } from 'lucide-react';
 import { toast } from 'react-toastify';
 import shared from '../shared.json';
 import generateImage from '../utils/generate-image';
