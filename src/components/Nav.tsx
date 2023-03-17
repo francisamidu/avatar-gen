@@ -1,11 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import shared from '../shared.json';
 import { Github } from 'lucide-react';
 
 const Nav = () => {
   return (
-    <motion.nav>
+    <nav>
       <div className="mx-auto flex flex-row flex-wrap items-center justify-between border-b border-gray-800 py-3 md:max-w-[1100px]">
         <a
           href="/"
@@ -22,7 +21,7 @@ const Nav = () => {
           <span className="ml-2 text-white">Star on Github</span>
         </a>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
