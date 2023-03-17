@@ -68,7 +68,7 @@ const Hero = () => {
             }
           />
           <Button
-            classNames="px-7 py-4 !rounded-3xl w-fit mt-5"
+            classNames="w-fit mt-5"
             icon={
               <svg
                 className="ml-3 h-5 w-5 animate-spin text-white"
