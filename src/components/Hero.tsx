@@ -8,12 +8,17 @@ import generateImage from '../utils/generate-image';
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
   const generateAvatar = async () => {
-    if (!prompt) {
-      toast.error('Please provide any image prompt');
-      return;
+    try {
+      if (!prompt) {
+        toast.error('Please provide any image prompt');
+        return;
+      }
+      const response = await generateImage(prompt);
+      console.log(response.url);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown error';
+      toast.error(message);
     }
-    const response = await generateImage(prompt);
-    console.log(response);
   };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
