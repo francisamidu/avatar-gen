@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 import Button from './Button';
 import { ArrowRight, TwitterIcon } from 'lucide-react';
 import shared from '../shared.json';
+import generateImage from '../utils/generate-image';
 
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
-  const generateAvatar = async () => {};
+  const generateAvatar = async () => {
+    if (!prompt) {
+      toast.error('Please provide any image prompt');
+      return;
+    }
+    const response = await generateImage(prompt);
+    console.log(response);
+  };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
       <div className="md:w-7/12">
