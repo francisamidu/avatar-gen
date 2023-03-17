@@ -91,7 +91,7 @@ const Hero = () => {
                 ></path>
               </svg>
             }
-            iconShow={loading}
+            loading={loading}
             text={buttonText}
             onClick={generateWallpaper}
           />
@@ -113,14 +113,8 @@ const Hero = () => {
           />
           <Button
             text="Download"
-            icon={
-              <Download
-                size={28}
-                color="#fff"
-                className="ml-3"
-                onClick={handleDownload}
-              />
-            }
+            onClick={handleDownload}
+            icon={<Download size={28} color="#fff" className="ml-3" />}
             iconShow={true}
           />
         </div>
