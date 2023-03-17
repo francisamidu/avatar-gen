@@ -19,7 +19,7 @@ const MainButton = ({
   return (
     <button type="button" className={styles} onClick={handleClick}>
       <span className="ml-3">{text}</span>
-      {icon && iconShow ? icon : null}
+      {iconShow ? icon : null}
     </button>
   );
 };

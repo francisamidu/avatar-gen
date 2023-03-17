@@ -69,7 +69,9 @@ const Hero = () => {
             !image ? 'hidden' : ''
           }`}
         >
-          <h3 className="mb-1 text-lg font-medium">Generated Wallpaper</h3>
+          <h3 className="mb-1 text-lg font-medium text-slate-300">
+            Generated Wallpaper
+          </h3>
           <img
             alt="Original photo of a room with roomGPT.io"
             src={image}
@@ -92,7 +94,7 @@ const Hero = () => {
                   cy="12"
                   r="10"
                   stroke="currentColor"
-                  stroke-width="4"
+                  strokeWidth="4"
                 ></circle>
                 <path
                   className="opacity-75"
