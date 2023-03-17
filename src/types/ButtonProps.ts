@@ -2,8 +2,8 @@ type ButtonProps = {
   classNames?: string;
   text: string;
   icon?: JSX.Element;
+  iconShow?: boolean;
   onClick?: (() => void) | ((e: any) => Promise<any>);
-  iconPosition?: 'left' | 'right';
 };
 
 export type { ButtonProps };
