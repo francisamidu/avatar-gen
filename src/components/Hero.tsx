@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import { TwitterIcon } from 'lucide-react';
+import { Download, TwitterIcon } from 'lucide-react';
 import { toast } from 'react-toastify';
 import shared from '../shared.json';
 import generateImage from '../utils/generate-image';
@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const [prompt, setPrompt] = useState('');
   const [image, setImage] = useState('');
+  const [buttonText, setButtonText] = useState('Start Generation');
   const [loading, setLoading] = useState(false);
   const generateWallpaper = async () => {
     try {
@@ -16,16 +17,36 @@ const Hero = () => {
         toast.error('Please provide any image prompt');
         return;
       }
+      setButtonText('Generating image....');
       setLoading(true);
       const response = await generateImage(prompt);
       setImage(response.url);
       setPrompt('');
+      setButtonText('Start Generation');
       setLoading(false);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
       setLoading(false);
+      setButtonText('Start Generation');
       toast.error(message);
     }
+  };
+  const handleDownload = async () => {
+    const originalImage = image;
+    const imageUrl = await fetch(originalImage);
+
+    //Split image name
+    const nameSplit = originalImage.split('/');
+    const duplicateName = nameSplit.pop();
+
+    const imageBlog = await imageUrl.blob();
+    const imageURL = URL.createObjectURL(imageBlog);
+    const link = document.createElement('a');
+    link.href = imageURL;
+    link.download = '' + duplicateName + '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
@@ -83,7 +104,7 @@ const Hero = () => {
               </svg>
             }
             iconShow={loading}
-            text={`Start Generating`}
+            text={buttonText}
             onClick={generateWallpaper}
           />
         </form>
@@ -102,7 +123,18 @@ const Hero = () => {
             width={400}
             height={400}
           />
-          <Button text="Download" />
+          <Button
+            text="Download"
+            icon={
+              <Download
+                size={28}
+                color="#fff"
+                className="ml-3"
+                onClick={handleDownload}
+              />
+            }
+            iconShow={true}
+          />
         </div>
       </div>
     </section>
