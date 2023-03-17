@@ -32,25 +32,13 @@ const Hero = () => {
     }
   };
   const handleDownload = async () => {
-    fetch(image, {
-      method: 'GET',
-      headers: {
-        'Content-Disposition': 'attachment',
-      },
-    })
-      .then((response) => {
-        response.arrayBuffer().then((buffer) => {
-          const url = window.URL.createObjectURL(new Blob([buffer]));
-          const link = document.createElement('a');
-          link.href = url;
-          link.setAttribute('download', 'image.jpg'); //or any other extension
-          document.body.appendChild(link);
-          link.click();
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const url = window.URL.createObjectURL(new Blob([image]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('target', '_blank');
+    link.setAttribute('download', 'image.jpg'); //or any other extension
+    document.body.appendChild(link);
+    link.click();
   };
   return (
     <section className="my-20 flex flex-1 flex-col items-center justify-center text-center">
@@ -133,7 +121,7 @@ const Hero = () => {
             classNames="mt-4"
             text="Download"
             onClick={handleDownload}
-            icon={<Download size={28} color="#fff" className="ml-3" />}
+            icon={<Download size={24} color="#fff" className="ml-3" />}
             iconShow={true}
           />
         </div>
