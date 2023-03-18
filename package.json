@@ -10,8 +10,6 @@
   "dependencies": {
     "@fontsource/inter": "4.5.15",
     "@heroicons/react": "2.0.16",
-    "file-saver": "2.0.5",
-    "framer-motion": "9.1.7",
     "lucide-react": "0.119.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,7 +19,6 @@
     "@nabla/vite-plugin-eslint": "1.5.0",
     "@types/eslint": "8.21.1",
     "@types/eslint-plugin-prettier": "3.1.0",
-    "@types/file-saver": "2.0.5",
     "@types/node": "18.11.0",
     "@types/prettier": "2.7.1",
     "@types/react": "18.0.21",
