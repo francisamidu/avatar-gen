@@ -34,6 +34,7 @@ const Hero = () => {
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('target', '_blank');
+    link.setAttribute("rel","noreferrer")
     link.setAttribute('download', `${prompt}.jpg`);
     document.body.appendChild(link);
     link.click();
